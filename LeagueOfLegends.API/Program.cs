@@ -1,3 +1,4 @@
+using System.Reflection;
 using LeagueOfLegends.Scrapper;
 using Microsoft.OpenApi.Models;
 
@@ -21,6 +22,10 @@ builder.Services.AddSwaggerGen(c =>
             Url = new Uri("https://github.com/Thomas-blondel")
         }
     });
+    
+    // using System.Reflection;
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
 builder.Services.AddScoped<IPatchNotesScrapper, PatchNoteScrapper>();
