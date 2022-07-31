@@ -1,8 +1,7 @@
-using LeagueOfLegends.Scrapper.Model;
-
 namespace LeagueOfLegends.API.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
+using Scrapper.Model;
 using Scrapper;
 
 [ApiController]
