@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegends.API", "LeagueOfLegends.API\LeagueOfLegends.API.csproj", "{9B5BF8B9-C2E4-4655-B3D2-025E9CE757C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegends.Scrapper", "LeagueOfLegends.Scrapper\LeagueOfLegends.Scrapper.csproj", "{0BC40554-03DB-407B-B05A-BB3762D71BED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B5BF8B9-C2E4-4655-B3D2-025E9CE757C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5BF8B9-C2E4-4655-B3D2-025E9CE757C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5BF8B9-C2E4-4655-B3D2-025E9CE757C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5BF8B9-C2E4-4655-B3D2-025E9CE757C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC40554-03DB-407B-B05A-BB3762D71BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC40554-03DB-407B-B05A-BB3762D71BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC40554-03DB-407B-B05A-BB3762D71BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC40554-03DB-407B-B05A-BB3762D71BED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
