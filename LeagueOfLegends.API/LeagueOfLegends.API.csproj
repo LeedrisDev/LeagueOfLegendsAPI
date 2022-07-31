@@ -12,7 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Business" />
       <Folder Include="DataAccess" />
+      <Folder Include="Models" />
     </ItemGroup>
 
     <ItemGroup>
