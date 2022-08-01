@@ -4,6 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
@@ -12,7 +13,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Business" />
       <Folder Include="DataAccess" />
+      <Folder Include="Models" />
     </ItemGroup>
 
     <ItemGroup>

@@ -4,7 +4,7 @@ using HtmlAgilityPack;
 using System.Net.Http;
 using Model;
 
-public class Scrapper
+public class PatchNoteScrapper: IPatchNotesScrapper
 {
     private static async Task<string> GetUrl(string fullUrl)
     {
@@ -54,16 +54,12 @@ public class Scrapper
         return patchNotes;
     }
 
-    public static async Task<string> ParseRiotPageNotesPage()
+    public async Task<IEnumerable<PatchNoteModel>> ParseRiotPageNotesPage()
     { 
         const string url = "https://www.leagueoflegends.com/fr-fr/news/tags/patch-notes/";
         var response = await GetUrl(url);
         var patchNotes = ParseHtml(response);
-
-        foreach (var patchNote in patchNotes)
-        {
-            Console.WriteLine("Name: {0} \t imageUrl: {1} \t patchNoteUrl: {2}", patchNote.Version, patchNote.ImageUrl, patchNote.PatchNoteUrl );
-        }
-        return response;
+        
+        return patchNotes;
     }
 }
