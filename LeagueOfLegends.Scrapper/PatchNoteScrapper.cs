@@ -35,7 +35,7 @@ public class PatchNoteScrapper: IPatchNotesScrapper
                 node.GetAttributeValue("class", "")
                     .Equals(
                         "style__Wrapper-sc-1h41bzo-0 style__ResponsiveWrapper-sc-1h41bzo-13 jyxTUP cayvOp isVisible"))
-            .Select(node => node.GetAttributeValue("href", ""))
+            .Select(node => $"https://www.leagueoflegends.com{node.GetAttributeValue("href", "")}")
             .ToList();
 
         if (patchNoteNames.Count() != imageUrls.Count() || patchNoteNames.Count() != patchNotesUrl.Count())
