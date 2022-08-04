@@ -24,7 +24,7 @@ public class PatchNotesController: ControllerBase
     /// <summary>Get the last 6 patch notes.</summary>
     /// <returns>Last 6 patch notes</returns>
     /// <response code="200">Returns the last 6 patch notes</response>
-    [HttpGet(Name = "GetPatchNotes")]
+    [HttpGet("LeagueOfLegends")]
     public async Task<IActionResult> Get()
     {
         var patchNotes = await _patchNotesScrapper.ParseRiotPageNotesPage();
