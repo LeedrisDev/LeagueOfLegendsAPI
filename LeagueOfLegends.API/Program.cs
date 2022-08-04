@@ -1,5 +1,7 @@
 using System.Reflection;
+using LeagueOfLegends.API.DataAccess;
 using LeagueOfLegends.Scrapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +28,12 @@ builder.Services.AddSwaggerGen(c =>
     // using System.Reflection;
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
+builder.Services.AddDbContextPool<DatabaseContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseNpgsql(connectionString);
 });
 
 builder.Services.AddScoped<IPatchNotesScrapper, PatchNoteScrapper>();

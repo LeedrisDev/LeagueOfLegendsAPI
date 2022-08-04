@@ -1,10 +1,12 @@
 namespace LeagueOfLegends.Scrapper.Model;
 
+[Serializable]
 public class PatchNoteModel
 {
-    public string Version { get; }
-    public string ImageUrl { get; }
-    public string PatchNoteUrl { get; }
+    public int Id { get; init; }
+    public string Version { get; init; }
+    public string ImageUrl { get; init; }
+    public string PatchNoteUrl { get; init; }
 
     public PatchNoteModel(string version, string imageUrl, string patchNoteUrl)
     {
