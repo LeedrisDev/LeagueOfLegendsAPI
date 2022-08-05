@@ -1,4 +1,6 @@
-﻿namespace LeagueOfLegends.Scrapper;
+﻿using LeagueOfLegends.Scrapper.Utils;
+
+namespace LeagueOfLegends.Scrapper;
 
 using HtmlAgilityPack;
 using System.Net.Http;
@@ -54,10 +56,9 @@ public class PatchNoteScrapper: IPatchNotesScrapper
         return patchNotes;
     }
 
-    public async Task<IEnumerable<PatchNoteModel>> ParseRiotPageNotesPage()
-    { 
-        const string url = "https://www.leagueoflegends.com/fr-fr/news/tags/patch-notes/";
-        var response = await GetUrl(url);
+    public async Task<IEnumerable<PatchNoteModel>> ParseLeagueOfLegendsPatchNotes()
+    {
+        var response = await GetUrl(AppConstants.PatchNotesUrl.LeagueOfLegendsPatchNotes);
         var patchNotes = ParseHtml(response);
         
         return patchNotes;

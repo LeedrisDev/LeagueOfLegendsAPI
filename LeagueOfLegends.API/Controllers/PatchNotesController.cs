@@ -27,19 +27,10 @@ public class PatchNotesController: ControllerBase
     [HttpGet("LeagueOfLegends")]
     public async Task<IActionResult> GetLeagueOfLegendsPatchNotes()
     {
-        var patchNotes = await _patchNotesScrapper.ParseRiotPageNotesPage();
+        var patchNotes = await _patchNotesScrapper.ParseLeagueOfLegendsPatchNotes();
         await _ctx.PatchNoteModels.AddRangeAsync(patchNotes);
         await _ctx.SaveChangesAsync();
         return Ok(patchNotes);
-    }
-
-    /// <summary>Get the last 6 Teamfight Tactics patch notes.</summary>
-    /// <returns>Last 6 Teamfight Tactics patch notes</returns>
-    /// <response code="200">Returns the last 6 Teamfight Tactics patch notes</response>
-    [HttpGet("TeamfightTactics")]
-    public async Task<IActionResult> GetTeamfightTacticsPatchNotes()
-    {
-        return Ok("Hello world");
     }
 
     [HttpGet("GetAllPatchnotesFromDatabase")]
