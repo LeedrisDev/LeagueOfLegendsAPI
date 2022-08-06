@@ -1,5 +1,7 @@
 using System.Reflection;
+using LeagueOfLegends.API.Business.PatchNoteBusiness;
 using LeagueOfLegends.API.DataAccess;
+using LeagueOfLegends.API.DataAccess.PatchNoteData;
 using LeagueOfLegends.Scrapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -30,13 +32,21 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
-builder.Services.AddDbContextPool<DatabaseContext>(options =>
+builder.Services.AddDbContext<DatabaseContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseNpgsql(connectionString);
-});
+}, ServiceLifetime.Singleton);
+// builder.Services.AddDbContextPool<DatabaseContext>(options =>
+// {
+//     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//     options.UseNpgsql(connectionString);
+// });
 
-builder.Services.AddScoped<IPatchNotesScrapper, PatchNoteScrapper>();
+// Dependency Injection
+builder.Services.AddSingleton<IPatchNotesScrapper, PatchNoteScrapper>();
+builder.Services.AddSingleton<IPatchNoteBusiness, PatchNotesBusiness>();
+builder.Services.AddSingleton<IPatchNoteData, PatchNoteData>();
 
 var app = builder.Build();
 
@@ -47,7 +57,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

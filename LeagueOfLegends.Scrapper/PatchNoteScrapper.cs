@@ -56,7 +56,7 @@ public class PatchNoteScrapper: IPatchNotesScrapper
         return patchNotes;
     }
 
-    public async Task<IEnumerable<PatchNoteModel>> ParseLeagueOfLegendsPatchNotes()
+    public async Task<IEnumerable<PatchNoteModel>> LeagueOfLegendsPatchNotes()
     {
         var response = await GetUrl(AppConstants.PatchNotesUrl.LeagueOfLegendsPatchNotes);
         var patchNotes = ParseHtml(response);

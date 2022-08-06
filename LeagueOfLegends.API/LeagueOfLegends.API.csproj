@@ -23,7 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Business" />
       <Folder Include="DataAccess\Migrations" />
       <Folder Include="Models" />
     </ItemGroup>

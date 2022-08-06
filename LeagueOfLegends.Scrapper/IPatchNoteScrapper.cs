@@ -4,5 +4,5 @@ using Model;
 
 public interface IPatchNotesScrapper
 {
-    public Task<IEnumerable<PatchNoteModel>> ParseLeagueOfLegendsPatchNotes();
+    public Task<IEnumerable<PatchNoteModel>> LeagueOfLegendsPatchNotes();
 }
