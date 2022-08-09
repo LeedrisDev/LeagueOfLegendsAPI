@@ -11,15 +11,15 @@ namespace LeagueOfLegends.API.Controllers;
 public class PlayerDetailController: ControllerBase
 {
     /// <summary>
-    /// This is the cndtructor (for dependency injection).
+    /// This is the constructor (for dependency injection).
     /// </summary>
     public PlayerDetailController()
     {
     }
     
-    [HttpGet("{PlayerName}")]
-    public IActionResult GetPlayerDetail(string PlayerName)
+    [HttpGet("{SummonerName}")]
+    public IActionResult GetPlayerDetail(string SummonerName)
     {
-        return Ok("Hello World " + PlayerName);
+        return Ok("Hello World " + SummonerName);
     }
 }

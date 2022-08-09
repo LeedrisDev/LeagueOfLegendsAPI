@@ -1,5 +1,6 @@
 using System.Reflection;
 using LeagueOfLegends.API.Business.PatchNoteBusiness;
+using LeagueOfLegends.API.Business.PlayerDetailBusiness;
 using LeagueOfLegends.API.DataAccess;
 using LeagueOfLegends.API.DataAccess.PatchNoteData;
 using LeagueOfLegends.Scrapper;
@@ -47,6 +48,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 builder.Services.AddSingleton<IPatchNotesScrapper, PatchNoteScrapper>();
 builder.Services.AddSingleton<IPatchNoteBusiness, PatchNotesBusiness>();
 builder.Services.AddSingleton<IPatchNoteData, PatchNoteData>();
+builder.Services.AddSingleton<IPlayerDetailBusiness, PlayerDetailBusiness>();
 
 var app = builder.Build();
 
