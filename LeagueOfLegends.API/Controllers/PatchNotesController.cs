@@ -1,13 +1,14 @@
 using LeagueOfLegends.API.Business;
 using LeagueOfLegends.API.Business.PatchNoteBusiness;
+using LeagueOfLegends.Scrapper.Utils;
 
 namespace LeagueOfLegends.API.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 using Scrapper.Model;
-using Scrapper;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Utils;
 
 /// <summary>
 /// This is the controller for the Patch notes.
@@ -39,8 +40,6 @@ public class PatchNotesController: ControllerBase
     public async Task<IActionResult> GetLeagueOfLegendsPatchNotes()
     {
         var patchNotes = await _patchNoteBusiness.GetPatchNotes();
-        // await _ctx.PatchNoteModels.AddRangeAsync(patchNotes);
-        // await _ctx.SaveChangesAsync();
         return Ok(patchNotes);
     }
 

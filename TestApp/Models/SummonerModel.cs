@@ -1,6 +1,6 @@
-using System.Text.Json.Serialization;
-
 namespace TestApp.Models;
+
+using System.Text.Json.Serialization;
 
 public class SummonerModel
 {
@@ -36,13 +36,3 @@ public class SummonerModel
         SummonerLevel = 0;
     }
 }
-
-// {
-// "id": "RCPyKTILsPEpuxz5-ts7y9nBk1N5P9ytD7eafsJ5zsJACx0",
-// "accountId": "PxeHIlhj1lI0hw70_6XSFb3hEiLm_Ebld6yYuB1EGN3I5kc",
-// "puuid": "fRvGDNo9KVzag9nsHdOOztjK-6Hcy5lxqZiOPVwfA_TnDgDmUQAI3YeCFdsowsSj-oAr05ob24xEUw",
-// "name": "Leedris",
-// "profileIconId": 3539,
-// "revisionDate": 1659737698000,
-// "summonerLevel": 91
-// }
