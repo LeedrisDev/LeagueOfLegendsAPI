@@ -1,9 +1,8 @@
-using LeagueOfLegends.API.DataAccess.PatchNoteData;
-
 namespace LeagueOfLegends.API.Business.PatchNoteBusiness;
 
 using Scrapper;
 using Scrapper.Model;
+using DataAccess.PatchNoteData;
 
 /// <summary>
 /// The patch note business.
