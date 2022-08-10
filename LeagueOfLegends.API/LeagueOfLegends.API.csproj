@@ -25,7 +25,6 @@
 
     <ItemGroup>
       <Folder Include="DataAccess\Migrations" />
-      <Folder Include="Models" />
     </ItemGroup>
 
     <ItemGroup>

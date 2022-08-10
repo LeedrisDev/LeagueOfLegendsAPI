@@ -38,11 +38,6 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseNpgsql(connectionString);
 }, ServiceLifetime.Singleton);
-// builder.Services.AddDbContextPool<DatabaseContext>(options =>
-// {
-//     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-//     options.UseNpgsql(connectionString);
-// });
 
 // Dependency Injection
 builder.Services.AddSingleton<IPatchNotesScrapper, PatchNoteScrapper>();

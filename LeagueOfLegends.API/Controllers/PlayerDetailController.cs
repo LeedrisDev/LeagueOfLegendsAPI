@@ -12,18 +12,30 @@ namespace LeagueOfLegends.API.Controllers;
 public class PlayerDetailController: ControllerBase
 {
     private readonly IPlayerDetailBusiness _playerDetailBusiness;
+    private readonly ILogger _logger;
     
     /// <summary>
     /// This is the constructor (for dependency injection).
     /// </summary>
-    public PlayerDetailController(IPlayerDetailBusiness playerDetailBusiness)
+    public PlayerDetailController(IPlayerDetailBusiness playerDetailBusiness, ILogger<PlayerDetailController> logger)
     {
         _playerDetailBusiness = playerDetailBusiness;
+        _logger = logger;
     }
 
-    [HttpGet("{SummonerName}")]
-    public IActionResult GetPlayerDetail(string SummonerName)
+    [HttpGet("{summonerName}")]
+    public async Task<IActionResult> GetPlayerDetail(string summonerName)
     {
-        return Ok("Hello World " + SummonerName);
+        try
+        {
+            await _playerDetailBusiness.TmpFunction(summonerName);
+        }
+        catch (ApplicationException ex)
+        {
+            _logger.LogError(ex.Message);
+            return NotFound(ex.Message);
+        }
+
+        return Ok("Hello World " + summonerName);
     }
 }
