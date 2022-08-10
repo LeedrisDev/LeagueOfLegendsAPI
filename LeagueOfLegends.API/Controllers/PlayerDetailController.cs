@@ -1,3 +1,4 @@
+using LeagueOfLegends.API.Business.PlayerDetailBusiness;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeagueOfLegends.API.Controllers;
@@ -10,13 +11,16 @@ namespace LeagueOfLegends.API.Controllers;
 [Produces("application/json")]
 public class PlayerDetailController: ControllerBase
 {
+    private readonly IPlayerDetailBusiness _playerDetailBusiness;
+    
     /// <summary>
     /// This is the constructor (for dependency injection).
     /// </summary>
-    public PlayerDetailController()
+    public PlayerDetailController(IPlayerDetailBusiness playerDetailBusiness)
     {
+        _playerDetailBusiness = playerDetailBusiness;
     }
-    
+
     [HttpGet("{SummonerName}")]
     public IActionResult GetPlayerDetail(string SummonerName)
     {

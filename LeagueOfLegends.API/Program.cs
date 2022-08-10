@@ -49,6 +49,7 @@ builder.Services.AddSingleton<IPatchNotesScrapper, PatchNoteScrapper>();
 builder.Services.AddSingleton<IPatchNoteBusiness, PatchNotesBusiness>();
 builder.Services.AddSingleton<IPatchNoteData, PatchNoteData>();
 builder.Services.AddSingleton<IPlayerDetailBusiness, PlayerDetailBusiness>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
