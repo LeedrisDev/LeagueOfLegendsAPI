@@ -1,33 +1,38 @@
 namespace LeagueOfLegends.API.Models.Response;
 
 using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
+/// <summary>
+/// Represents a response from the Riot API.
+/// </summary>
 public class SummonerResponse
 {
     /// <summary>
     /// Encrypted summoner ID. Max length 63 characters.
     /// </summary>
+    [Key]
     [JsonPropertyName("id")]
-    public string Id { get; init; }
-    
+    public string Id { get; init; } = null!;
+
     /// <summary>
     /// Encrypted account ID. Max length 56 characters.
     /// </summary>
     [JsonPropertyName("accountId")]
-    public string AccountId { get; init; }
-    
+    public string AccountId { get; init; } = null!;
+
     /// <summary>
     /// Encrypted PUUID. Exact length of 78 characters.
     /// </summary>
     [JsonPropertyName("puuid")]
-    public string  Puuid { get; init; }
-    
+    public string  Puuid { get; init; } = null!;
+
     /// <summary>
     /// Summoner name.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; }
-    
+    public string Name { get; init; } = null!;
+
     /// <summary>
     /// ID of the summoner icon associated with the summoner.
     /// </summary>
@@ -48,6 +53,10 @@ public class SummonerResponse
     [JsonPropertyName("summonerLevel")]
     public int SummonerLevel { get; init; }
 
+    /// <summary>
+    /// Override the ToString method to return object fields.
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         return "Id: " + Id + '\n' +
