@@ -36,7 +36,7 @@ public class SummonerData: ISummonerData
             summonerEntity.SummonerLevel = summoner.SummonerLevel;
             summonerEntity.ProfileIconId = summoner.ProfileIconId;
         }
-        catch (InvalidOperationException e)
+        catch (InvalidOperationException)
         {
             _ctx.SummonerResponses.Add(summoner);
         }
