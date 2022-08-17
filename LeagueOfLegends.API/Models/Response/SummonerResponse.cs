@@ -56,7 +56,7 @@ public class SummonerResponse
     /// <summary>
     /// Override the ToString method to return object fields.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Representation of the object.</returns>
     public override string ToString()
     {
         return "Id: " + Id + '\n' +
