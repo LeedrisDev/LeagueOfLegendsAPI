@@ -49,9 +49,9 @@ public class SummonerData: ISummonerData
     /// </summary>
     /// <param name="summonerName">Name of the summoner wanted</param>
     /// <returns>The summoner wanted or raise an exception.</returns>
-    public async Task<SummonerResponse> GetSummonerFromDatabase(string summonerName)
+    public SummonerResponse GetSummonerFromDatabase(string summonerName)
     {
-        return await _ctx.SummonerResponses
-            .FirstAsync(elt => elt.Name == summonerName);
+        return _ctx.SummonerResponses
+            .First(elt => elt.Name == summonerName);
     }
 }
