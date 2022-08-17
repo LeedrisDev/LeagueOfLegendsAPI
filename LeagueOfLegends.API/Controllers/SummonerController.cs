@@ -27,11 +27,12 @@ public class SummonerController: ControllerBase
 
     /// <summary>Get basic information on a summoner</summary>
     /// <returns>Last 6 League Of Legends patch notes</returns>
-    /// <param name="summonerName">Name of the summoner wanted</param>
-    /// <response code="200">Returns basic information on a summoner</response>
-    /// <response code="400">The summoner was not found</response>
+    /// <param name="summonerName">Name of the summoner wanted.</param>
+    /// <response code="200">Returns basic information on a summoner.</response>
+    /// <response code="404">Summoner not found.</response>
     [HttpGet("{summonerName}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SummonerDto))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFoundObject))]
     public async Task<IActionResult> GetSummonerInformation(string summonerName)
     {
         try
@@ -41,8 +42,8 @@ public class SummonerController: ControllerBase
         }
         catch (ApplicationException ex)
         {
-            _logger.LogError(ex.Message);
-            return NotFound(ex.Message);
+            var notFound = new NotFoundObject(ex.Message);
+            return NotFound(notFound);
         }
     }
 }
