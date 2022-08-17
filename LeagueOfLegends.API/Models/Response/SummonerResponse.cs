@@ -19,25 +19,25 @@ public class SummonerResponse
     /// Encrypted account ID. Max length 56 characters.
     /// </summary>
     [JsonPropertyName("accountId")]
-    public string AccountId { get; init; } = null!;
+    public string AccountId { get; set; } = null!;
 
     /// <summary>
     /// Encrypted PUUID. Exact length of 78 characters.
     /// </summary>
     [JsonPropertyName("puuid")]
-    public string  Puuid { get; init; } = null!;
+    public string  Puuid { get; set; } = null!;
 
     /// <summary>
     /// Summoner name.
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; init; } = null!;
+    public string Name { get; set; } = null!;
 
     /// <summary>
     /// ID of the summoner icon associated with the summoner.
     /// </summary>
     [JsonPropertyName("profileIconId")]
-    public long ProfileIconId { get; init; }
+    public long ProfileIconId { get; set; }
     
     /// <summary>
     /// Date summoner was last modified specified as epoch milliseconds.
@@ -45,13 +45,13 @@ public class SummonerResponse
     /// or profile icon change.
     /// </summary>
     [JsonPropertyName("revisionDate")]
-    public long RevisionDate { get; init; }
+    public long RevisionDate { get; set; }
     
     /// <summary>
     /// Summoner level associated with the summoner.
     /// </summary>
     [JsonPropertyName("summonerLevel")]
-    public int SummonerLevel { get; init; }
+    public int SummonerLevel { get; set; }
 
     /// <summary>
     /// Override the ToString method to return object fields.

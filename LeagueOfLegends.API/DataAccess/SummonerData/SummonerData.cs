@@ -24,10 +24,24 @@ public class SummonerData: ISummonerData
     /// Save Summoner to database.
     /// </summary>
     /// <param name="summoner"></param>
-    public void SaveSummonerToDatabase(SummonerResponse summoner)
+    public async void SaveSummonerToDatabase(SummonerResponse summoner)
     {
-        _ctx.Add(summoner);
-        _ctx.SaveChanges();
+        try
+        {
+            var summonerEntity = _ctx.SummonerResponses.First(elt => summoner.Id == elt.Id);
+            summonerEntity.Name = summoner.Name;
+            summonerEntity.Puuid = summoner.Puuid;
+            summonerEntity.AccountId = summoner.AccountId;
+            summonerEntity.RevisionDate = summoner.RevisionDate;
+            summonerEntity.SummonerLevel = summoner.SummonerLevel;
+            summonerEntity.ProfileIconId = summoner.ProfileIconId;
+        }
+        catch (InvalidOperationException e)
+        {
+            _ctx.SummonerResponses.Add(summoner);
+        }
+
+        await _ctx.SaveChangesAsync();
     }
 
     /// <summary>
