@@ -1,6 +1,5 @@
-using LeagueOfLegends.API.Business;
+using System.Diagnostics;
 using LeagueOfLegends.API.Business.PatchNoteBusiness;
-using LeagueOfLegends.Scrapper.Utils;
 
 namespace LeagueOfLegends.API.Controllers;
 
@@ -8,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Scrapper.Model;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
-using Utils;
 
 /// <summary>
 /// This is the controller for the Patch notes.
@@ -21,16 +19,19 @@ public class PatchNotesController: ControllerBase
 {
     private readonly IPatchNoteBusiness _patchNoteBusiness;
     private readonly DatabaseContext _ctx;
-    
+    private readonly ILogger _logger;
+
     /// <summary>
     /// Constructor (for dependency injection)
     /// </summary>
     /// <param name="patchNoteBusiness"></param>
     /// <param name="ctx"></param>
-    public PatchNotesController(IPatchNoteBusiness patchNoteBusiness, DatabaseContext ctx)
+    /// <param name="logger"></param>
+    public PatchNotesController(IPatchNoteBusiness patchNoteBusiness, DatabaseContext ctx, ILogger logger)
     {
         _patchNoteBusiness = patchNoteBusiness;
         _ctx = ctx;
+        _logger = logger;
     }
 
     /// <summary>Get the last 6 League Of Legends patch notes.</summary>

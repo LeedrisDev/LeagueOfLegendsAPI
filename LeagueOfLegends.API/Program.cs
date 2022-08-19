@@ -1,7 +1,9 @@
 using System.Reflection;
 using LeagueOfLegends.API.Business.PatchNoteBusiness;
+using LeagueOfLegends.API.Business.SummonerBusiness;
 using LeagueOfLegends.API.DataAccess;
 using LeagueOfLegends.API.DataAccess.PatchNoteData;
+using LeagueOfLegends.API.DataAccess.SummonerData;
 using LeagueOfLegends.Scrapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -37,16 +39,14 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseNpgsql(connectionString);
 }, ServiceLifetime.Singleton);
-// builder.Services.AddDbContextPool<DatabaseContext>(options =>
-// {
-//     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-//     options.UseNpgsql(connectionString);
-// });
 
 // Dependency Injection
 builder.Services.AddSingleton<IPatchNotesScrapper, PatchNoteScrapper>();
 builder.Services.AddSingleton<IPatchNoteBusiness, PatchNotesBusiness>();
 builder.Services.AddSingleton<IPatchNoteData, PatchNoteData>();
+builder.Services.AddSingleton<ISummonerBusiness, SummonerBusiness>();
+builder.Services.AddSingleton<ISummonerData, SummonerData>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

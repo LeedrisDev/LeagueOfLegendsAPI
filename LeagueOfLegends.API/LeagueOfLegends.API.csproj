@@ -25,7 +25,7 @@
 
     <ItemGroup>
       <Folder Include="DataAccess\Migrations" />
-      <Folder Include="Models" />
+      <Folder Include="Images\ProfileIcons" />
     </ItemGroup>
 
     <ItemGroup>
