@@ -18,5 +18,5 @@ public interface ISummonerData
     /// </summary>
     /// <param name="summonerName">Name of the summoner wanted.</param>
     /// <returns>The summoner founded in database, otherwise raise an exception.</returns>
-    public SummonerResponse GetSummonerFromDatabase(string summonerName);
+    public SummonerResponse? GetSummonerFromDatabase(string summonerName);
 }

@@ -22,7 +22,7 @@ public class SummonerBusiness: ISummonerBusiness
     /// <param name="httpClient">An HttpClient object</param>
     /// <param name="summonerData">A SummonerData object</param>
     /// <param name="logger">A Logger object</param>
-    public SummonerBusiness(HttpClient httpClient, ISummonerData summonerData, ILogger logger)
+    public SummonerBusiness(HttpClient httpClient, ISummonerData summonerData, ILogger<SummonerBusiness> logger)
     {
         httpClient.DefaultRequestHeaders.Add("X-Riot-Token", AppConstants.ApiKey);
         _httpClient = httpClient;

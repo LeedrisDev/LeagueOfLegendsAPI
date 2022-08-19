@@ -1,6 +1,7 @@
 using System.Reflection;
 using LeagueOfLegends.API.Business.PatchNoteBusiness;
 using LeagueOfLegends.API.Business.SummonerBusiness;
+using LeagueOfLegends.API.Business.SummonerMatchBusiness;
 using LeagueOfLegends.API.DataAccess;
 using LeagueOfLegends.API.DataAccess.PatchNoteData;
 using LeagueOfLegends.API.DataAccess.SummonerData;
@@ -46,6 +47,7 @@ builder.Services.AddSingleton<IPatchNoteBusiness, PatchNotesBusiness>();
 builder.Services.AddSingleton<IPatchNoteData, PatchNoteData>();
 builder.Services.AddSingleton<ISummonerBusiness, SummonerBusiness>();
 builder.Services.AddSingleton<ISummonerData, SummonerData>();
+builder.Services.AddSingleton<ISummonerMatchBusiness, SummonerMatchBusiness>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
