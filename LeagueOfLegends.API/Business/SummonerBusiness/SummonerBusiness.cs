@@ -1,8 +1,9 @@
+using LeagueOfLegends.API.Models.DTO;
+
 namespace LeagueOfLegends.API.Business.SummonerBusiness;
 
 using System.Text.Json;
 using System.Net;
-using DTO;
 using Models.Response;
 using Utils;
 using DataAccess.SummonerData;
@@ -41,8 +42,8 @@ public class SummonerBusiness: ISummonerBusiness
         if (task.StatusCode == HttpStatusCode.NotFound)
             throw new ApplicationException("Summoner '" + summonerName + "' not found");
         
-        var summoner = await JsonSerializer.DeserializeAsync<SummonerResponse>(task.Content.ReadAsStream());
-        _summonerData.SaveSummonerToDatabase(summoner!);
+        var summoner = await JsonSerializer.DeserializeAsync<SummonerResponse>(await task.Content.ReadAsStreamAsync());
+        await _summonerData.SaveSummonerToDatabase(summoner!);
         _logger.LogWarning(summoner!.ToString());
 
         return new SummonerDto(summoner);

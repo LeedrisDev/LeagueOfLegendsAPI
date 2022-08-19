@@ -11,7 +11,7 @@ public interface ISummonerData
     /// Save the summoner to the database.
     /// </summary>
     /// <param name="summoner">Summoner wanted to be saved.</param>
-    public void SaveSummonerToDatabase(SummonerResponse summoner);
+    public Task SaveSummonerToDatabase(SummonerResponse summoner);
     
     /// <summary>
     /// Get the summoner from the database.

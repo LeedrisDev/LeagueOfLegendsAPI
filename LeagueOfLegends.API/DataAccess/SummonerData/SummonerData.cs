@@ -24,7 +24,7 @@ public class SummonerData: ISummonerData
     /// Save Summoner to database.
     /// </summary>
     /// <param name="summoner"></param>
-    public async void SaveSummonerToDatabase(SummonerResponse summoner)
+    public async Task SaveSummonerToDatabase(SummonerResponse summoner)
     {
         try
         {

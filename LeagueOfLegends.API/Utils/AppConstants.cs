@@ -3,7 +3,7 @@ namespace LeagueOfLegends.API.Utils;
 /// <summary>
 /// Class that contains all the constants of the API
 /// </summary>
-public class AppConstants
+public static class AppConstants
 {
     public static readonly string ApiKey = Environment.GetEnvironmentVariable("API_KEY")!;
 
@@ -16,6 +16,11 @@ public class AppConstants
             return "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + summonerPuuid + "/ids"
                    + "?start=" + start
                    + "&count=" + count;
+        }
+        
+        public static string MatchDetails(string matchId)
+        {
+            return "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchId;
         }
     }
 }

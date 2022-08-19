@@ -1,4 +1,4 @@
-namespace LeagueOfLegends.API.Business.DTO;
+namespace LeagueOfLegends.API.Models.DTO;
 
 /// <summary>
 /// Class representing a not found request.

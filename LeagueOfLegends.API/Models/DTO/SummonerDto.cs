@@ -1,6 +1,6 @@
 using LeagueOfLegends.API.Models.Response;
 
-namespace LeagueOfLegends.API.Business.DTO;
+namespace LeagueOfLegends.API.Models.DTO;
 
 /// <summary>
 /// This class is used to transfer data between the business layer and the presentation layer.

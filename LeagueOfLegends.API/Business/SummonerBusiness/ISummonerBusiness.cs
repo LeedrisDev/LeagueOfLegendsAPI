@@ -1,6 +1,6 @@
-namespace LeagueOfLegends.API.Business.SummonerBusiness;
+using LeagueOfLegends.API.Models.DTO;
 
-using DTO;
+namespace LeagueOfLegends.API.Business.SummonerBusiness;
 
 /// <summary>
 /// Interface for Summoner Business
