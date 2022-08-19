@@ -10,7 +10,7 @@ public interface ISummonerBusiness
     /// <summary>
     /// Get Name, id of profile icon and level of a summoner.
     /// </summary>
-    /// <param name="summonerName"></param>
+    /// <param name="summonerName">Name of summoner.</param>
     /// <returns>The created SummonerDTO for the response.</returns>
     public Task<SummonerDto> GetSummonerInformation(string summonerName);
 }

@@ -22,7 +22,7 @@ public class SummonerBusiness: ISummonerBusiness
     /// <param name="httpClient">An HttpClient object</param>
     /// <param name="summonerData">A SummonerData object</param>
     /// <param name="logger">A Logger object</param>
-    public SummonerBusiness(HttpClient httpClient, ISummonerData summonerData, ILogger<SummonerBusiness> logger)
+    public SummonerBusiness(HttpClient httpClient, ISummonerData summonerData, ILogger logger)
     {
         httpClient.DefaultRequestHeaders.Add("X-Riot-Token", AppConstants.ApiKey);
         _httpClient = httpClient;
@@ -33,7 +33,7 @@ public class SummonerBusiness: ISummonerBusiness
     /// <summary>
     /// Get Name, id of profile icon and level of a summoner.
     /// </summary>
-    /// <param name="summonerName"></param>
+    /// <param name="summonerName">Name of summoner.</param>
     /// <returns>The created SummonerDTO for the response.</returns>
     public async Task<SummonerDto> GetSummonerInformation(string summonerName)
     {

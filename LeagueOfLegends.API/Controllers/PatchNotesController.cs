@@ -27,7 +27,7 @@ public class PatchNotesController: ControllerBase
     /// <param name="patchNoteBusiness"></param>
     /// <param name="ctx"></param>
     /// <param name="logger"></param>
-    public PatchNotesController(IPatchNoteBusiness patchNoteBusiness, DatabaseContext ctx, ILogger<PatchNotesController> logger)
+    public PatchNotesController(IPatchNoteBusiness patchNoteBusiness, DatabaseContext ctx, ILogger logger)
     {
         _patchNoteBusiness = patchNoteBusiness;
         _ctx = ctx;

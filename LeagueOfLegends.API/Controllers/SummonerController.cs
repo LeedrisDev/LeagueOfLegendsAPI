@@ -18,7 +18,7 @@ public class SummonerController: ControllerBase
     /// <summary>
     /// This is the constructor (for dependency injection).
     /// </summary>
-    public SummonerController(ISummonerBusiness summonerBusiness, ILogger<SummonerController> logger)
+    public SummonerController(ISummonerBusiness summonerBusiness, ILogger logger)
     {
         _summonerBusiness = summonerBusiness;
         _logger = logger;

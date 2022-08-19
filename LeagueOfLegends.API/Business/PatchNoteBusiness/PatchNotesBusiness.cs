@@ -31,7 +31,7 @@ public class PatchNotesBusiness: IPatchNoteBusiness
     {
         var patchNotes = (await _patchNotesScrapper.LeagueOfLegendsPatchNotes()).ToList();
         patchNotes.Reverse();
-        _patchNoteData.SavePatchNotesToDatabase((patchNotes));
+        _patchNoteData.SavePatchNotesToDatabase(patchNotes);
         return patchNotes;
     }
 }

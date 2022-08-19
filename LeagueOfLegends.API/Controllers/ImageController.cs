@@ -14,9 +14,9 @@ public class ImageController: ControllerBase
     private readonly ILogger<ImageController> _logger;
     
     /// <summary>
-    /// Constructor ImageController.
+    /// Constructor for ImageController.
     /// </summary>
-    /// <param name="logger">Logger object.</param>
+    /// <param name="logger">A logger object.</param>
     public ImageController(ILogger<ImageController> logger)
     {
         _logger = logger;
