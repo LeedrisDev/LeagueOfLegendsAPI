@@ -1,4 +1,4 @@
-using LeagueOfLegends.API.Business.DTO;
+using LeagueOfLegends.API.Models.DTO;
 
 namespace LeagueOfLegends.API.Controllers;
 

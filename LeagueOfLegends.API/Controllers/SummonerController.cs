@@ -1,10 +1,10 @@
 using LeagueOfLegends.API.Business.SummonerMatchBusiness;
+using LeagueOfLegends.API.Models.DTO;
 
 namespace LeagueOfLegends.API.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 using Business.SummonerBusiness;
-using Business.DTO;
 
 /// <summary>
 /// This is the controller for player details.
