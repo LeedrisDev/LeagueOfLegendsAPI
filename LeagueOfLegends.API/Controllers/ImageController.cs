@@ -4,17 +4,29 @@ namespace LeagueOfLegends.API.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
+/// <summary>
+/// Controller for the image API.
+/// </summary>
 [ApiController]
 [Route("images")]
 public class ImageController: ControllerBase
 {
     private readonly ILogger<ImageController> _logger;
     
+    /// <summary>
+    /// Constructor ImageController.
+    /// </summary>
+    /// <param name="logger">Logger object.</param>
     public ImageController(ILogger<ImageController> logger)
     {
         _logger = logger;
     }
     
+    /// <summary>
+    /// Get the image for the profile icon.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("profileIcon/{id:int}")]
     [Produces("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(byte[]))]

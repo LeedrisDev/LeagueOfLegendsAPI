@@ -39,7 +39,7 @@ public class SummonerBusiness: ISummonerBusiness
     {
         var task = await _httpClient.GetAsync(AppConstants.RiotUrls.Summoner + summonerName);
         if (task.StatusCode == HttpStatusCode.NotFound)
-            throw new ApplicationException("Player '" + summonerName + "' not found");
+            throw new ApplicationException("Summoner '" + summonerName + "' not found");
         
         var summoner = await JsonSerializer.DeserializeAsync<SummonerResponse>(task.Content.ReadAsStream());
         _summonerData.SaveSummonerToDatabase(summoner!);
